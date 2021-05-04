@@ -1,15 +1,3 @@
-"""Paint, for drawing shapes.
-
-Exercises
-
-1. Add a color.
-2. Complete circle.
-3. Complete rectangle.
-4. Complete triangle.
-5. Add width parameter.
-
-"""
-
 from turtle import *
 import turtle
 from freegames import vector
@@ -42,18 +30,43 @@ def circle(start, end):
     turtle.penup()
     turtle.setpos(start.x,start.y)
     turtle.pendown()
-    rad=math.hypot(abs(pmx-start.x),abs(pmy-start.y))
+    ang = turtle.towards(end.x,end.y)
+    turtle.setheading(ang)
+    rad = math.hypot(abs(pmx-start.x),abs(pmy-start.y))
+    begin_fill()
     turtle.circle(rad)
-
+    end_fill()
 
     pass  # TODO
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
+    turtle.penup()
+    turtle.setpos(start.x,start.y)
+    turtle.pendown()
+    begin_fill()
+    turtle.forward(100)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(100)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    end_fill()
     pass  # TODO
+
 
 def triangle(start, end):
     "Draw triangle from start to end."
+    turtle.penup()
+    turtle.goto(start)
+    begin_fill()
+    turtle.pendown()
+    turtle.goto(end)
+    turtle.goto(start.x,end.y)
+    turtle.goto(start)
+    end_fill()
     pass  # TODO
 
 def tap(x, y):
