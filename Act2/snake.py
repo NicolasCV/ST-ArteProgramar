@@ -9,6 +9,17 @@ snake = [vector(10, 0)]
 aim = vector(0, -10)
 rav = vector(0, 0)
 
+#Se escogen los colores para las vibora
+colors = ['black','yellow','green','blue','orange']
+co = random.choice(colors)
+
+#Se escoge uno nuevo hasta que no sean iguales
+while True:
+  co2 = random.choice(colors)
+
+  if co2 != co:
+    break
+
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -41,9 +52,10 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, co)
+        
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, co2)
     update()
     ontimer(move, 100)
 
