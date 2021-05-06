@@ -32,12 +32,14 @@ writer = Turtle(visible=False,)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
 
+co = ['red','orange','green']
+
 #Cada uno de los ghosts y su primer movimiento
 ghosts = [
-    [vector(-180, 160), vector(5, 0)],
-    [vector(-180, -160), vector(0, 5)],
-    [vector(100, 160), vector(0, -5)],
-    [vector(100, -160), vector(-5, 0)],
+    [vector(-180, 160), vector(5, 0),choice(co)],
+    [vector(-180, -160), vector(0, 5),choice(co)],
+    [vector(100, 160), vector(0, -5),choice(co)],
+    [vector(100, -160), vector(-5, 0),choice(co)],
 ]
 
 
@@ -109,7 +111,8 @@ def valid(point):
 def world():
     #Draw world using path.
     bgcolor('black')
-    path.color('blue')
+    colorss = ['blue','purple','gray','pink']
+    path.color(choice(colorss))
 
     #Recorre toda la lista de tirles
     for index in range(len(tiles)):
@@ -160,7 +163,7 @@ def move():
     dot(20, 'yellow')
 
     #Por cada ghosts
-    for point, course in ghosts:
+    for point, course, col in ghosts:
         
         #Todo esto es para la interseccion, se usa un diccionario para indicar a que direccion mas facil
         options = {
@@ -225,11 +228,11 @@ def move():
 
         #Se mueve el ghost
         goto(point.x + 10, point.y + 10)
-        dot(20, 'red')
+        dot(20, col)
 
     update()
 
-    for point, course in ghosts:
+    for point, course, col in ghosts:
         if abs(pacman - point) < 20:
             writer.goto(-120,10)
             writer.write('GAME OVER', font = ('Arial',30,'normal'))
