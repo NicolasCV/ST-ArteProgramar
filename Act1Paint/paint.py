@@ -3,6 +3,8 @@ import turtle
 from freegames import vector
 import math
 
+
+#La funcion para crear una linea
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -10,6 +12,7 @@ def line(start, end):
     down()
     goto(end.x, end.y)
 
+#Funcion para un cuadrado
 def square(start, end):
     "Draw square from start to end."
     up()
@@ -23,8 +26,10 @@ def square(start, end):
 
     end_fill()
 
+#Nuestra funcion para crear un circulo
 def circle(start, end):
     "Draw circle from start to end."
+    #PM = punto medio entre los puntos
     pmx=(start.x+end.x)/2
     pmy=(start.y+end.y)/2
     turtle.penup()
@@ -33,6 +38,7 @@ def circle(start, end):
     ang = turtle.towards(end.x,end.y)
     turtle.setheading(ang)
     rad = math.hypot(abs(pmx-start.x),abs(pmy-start.y))
+    
     begin_fill()
     turtle.circle(rad)
     end_fill()
@@ -56,7 +62,7 @@ def rectangle(start, end):
     end_fill()
     pass  # TODO
 
-
+#Funcion para crear un triangulo
 def triangle(start, end):
     "Draw triangle from start to end."
     turtle.penup()
@@ -69,6 +75,7 @@ def triangle(start, end):
     end_fill()
     pass  # TODO
 
+#Nuestra funcion para marcar los vectores de inicio y final y saber que figura hacer
 def tap(x, y):
     "Store starting point or draw shape."
     start = state['start']
@@ -81,6 +88,7 @@ def tap(x, y):
         shape(start, end)
         state['start'] = None
 
+#Nuestra funcion para definir cual shape vamos a realizar
 def store(key, value):
     "Store value in state at key."
     state[key] = value

@@ -1,0 +1,3 @@
+Con este trabajo tuve que buscar un poco mas sobre la documentacion de turtle que antes debido a que no sabia
+bien como funcionaba el juego de snake pero tras analizarlo ya pudimos sacar adelante lo que nos pidio la
+actividad. No fue complicado solo que si tuvimos que buscar un poco mas en la documentacion.

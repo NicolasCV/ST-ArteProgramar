@@ -20,19 +20,24 @@ while True:
   if co2 != co:
     break
 
+
+#Se cambia el aim / hacia donde apunta 
 def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
 
+#Parametros para checar si esta adentro de la ventana, devuelve una tupla de booleanos
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
+#Se utiliza para mover la 
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
+
 
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
@@ -41,6 +46,7 @@ def move():
 
     snake.append(head)
 
+    #Lo que se realiza cuando se come algo
     if head == food:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
@@ -51,6 +57,7 @@ def move():
 
     clear()
 
+    #Movimiento para el cuerpo de la snake
     for body in snake:
         square(body.x, body.y, 9, co)
         
@@ -59,6 +66,7 @@ def move():
     update()
     ontimer(move, 100)
 
+#Nuestra funcion para mover la comida
 def moveFood():
     #Random choice para escoger a donde ir
     moves = [(10,0),(-10, 0),(0, 10),(0, -10)]
