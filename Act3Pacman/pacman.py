@@ -3,9 +3,14 @@
 #6 de mayo 2021
 
 #Reflexion - Que aprendimos?
+#Nicolas:
+'''
+La parte de hacer mas inteligentes a los pacman fue un poco complicado ya que tuve que primero investigar como hacer uno mas inteligente
+Tuve que primero entender el codigo lo cual estuvo tardado pero al final se implemento algo muy simple solo que tuve problema encontrando el angulo
+Entre los dos para saber hacia donde deberia moverse el ghost, no fue complicado pero me estaba dando los angulos en radianes y no grados
+aprendi a manejar mejor los vectores
 
-
-
+'''
 from random import choice
 from turtle import *
 from freegames import floor, vector
