@@ -21,7 +21,7 @@ state = {'score': 0}
 
 #Hace invisible la tortuga
 path = Turtle(visible=False)
-writer = Turtle(visible=False)
+writer = Turtle(visible=False,)
 
 
 aim = vector(5, 0)
@@ -225,6 +225,8 @@ def move():
 
     for point, course in ghosts:
         if abs(pacman - point) < 20:
+            writer.goto(-120,10)
+            writer.write('GAME OVER', font = ('Arial',30,'normal'))
             return
 
     ontimer(move, 100)
@@ -241,12 +243,25 @@ setup(420, 420, 370, 0)
 
 #Esconde la flechita
 hideturtle()
-tracer(False)
+
+
 
 #Mueve la turtle writer a posicion 160,160
-writer.goto(160, 160)
+
+
+tracer(False)
+writer.goto(160,150)
 writer.color('white')
+writer.write('Nicolas Cardenas Valdez A01114959')
+
+tracer(False)
+writer.goto(160,140)
+writer.write('Angel Ivan Vargas Medina A00829204')
+
+tracer(False)
+writer.goto(160, 160)
 writer.write(state['score'])
+
 
 listen()
 onkey(lambda: change(5, 0), 'Right')
