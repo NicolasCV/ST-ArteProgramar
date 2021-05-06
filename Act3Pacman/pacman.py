@@ -15,6 +15,7 @@ Una  parte importante  y escencial fue  entender  el codigo de una mejor manera 
 y de la velocidad, cosa que se tuvo que checar bien y mas en el tablero para que quedara  bien acomodado y sea jugable. Por ultimo en clase se agregaron mas funciones las
 cuales siento que  implementaron muy bien el juego y lo hicieron mas divertido.
 '''
+
 from random import choice
 from turtle import *
 from freegames import floor, vector
@@ -68,7 +69,7 @@ tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]
-]
+
 
 #Hace un cuadro con su esquina inferior izquierda en (x,y)
 def square(x, y):
