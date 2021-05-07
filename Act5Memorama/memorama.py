@@ -9,7 +9,9 @@ Aprendi mas sobre la libreria turtle y como puede ser utilizada
 Practique aun mas con Github
 '''
 
-#Angel
+#Angel: De igual manera que con la actividad anterior fue iondispensable 
+# entender primero el codigo y despues se pudo realizar la actividad sin problemas
+# Siento que la implementacion de la pagina Github fue una gran idea ya que de mi parte nunca la habia usado.
 '''
 
 
